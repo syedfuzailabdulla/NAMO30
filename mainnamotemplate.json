@@ -67,6 +67,7 @@
               "access": "Allow",
               "direction": "Inbound",
               "protocol": "Tcp",
+              "sourcePortRange": "*",
               "destinationPortRange": "80",
               "sourceAddressPrefix": "*",
               "destinationAddressPrefix": "*"
@@ -79,6 +80,7 @@
               "access": "Allow",
               "direction": "Inbound",
               "protocol": "Tcp",
+              "sourcePortRange": "*",
               "destinationPortRange": "443",
               "sourceAddressPrefix": "*",
               "destinationAddressPrefix": "*"
