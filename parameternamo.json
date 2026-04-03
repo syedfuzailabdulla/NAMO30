@@ -9,7 +9,7 @@
     "vm2Name": { "value": "vm2" },
     "adminUsername": { "value": "azureuser" },
     "adminPassword": { "value": "YourStrongPassword123!" },
-    "principalId": { "value": "REPLACE-WITH-USER-OBJECT-ID" },
+    "principalId": { "value": "61c29db9-e40d-44b0-b76b-c3529575f7d6" },
     "nestedTemplateUrl": {
       "value": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/main/nestednamo.json"
     }
