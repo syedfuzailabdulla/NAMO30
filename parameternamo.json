@@ -11,7 +11,7 @@
     "adminPassword": { "value": "YourStrongPassword123!" },
     "principalId": { "value": "REPLACE-WITH-USER-OBJECT-ID" },
     "nestedTemplateUrl": {
-      "value": "https://raw.githubusercontent.com/yourrepo/rbacTemplate.json"
+      "value": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/main/nestednamo.json"
     }
   }
 }
