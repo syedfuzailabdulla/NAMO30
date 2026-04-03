@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+
+  "parameters": {
+    "subnet1Prefix": { "value": "10.0.1.0/24" },
+    "subnet2Prefix": { "value": "10.0.2.0/24" },
+    "vm1Name": { "value": "vm1" },
+    "vm2Name": { "value": "vm2" },
+    "adminUsername": { "value": "azureuser" },
+    "adminPassword": { "value": "YourStrongPassword123!" },
+    "principalId": { "value": "REPLACE-WITH-USER-OBJECT-ID" },
+    "nestedTemplateUrl": {
+      "value": "https://raw.githubusercontent.com/yourrepo/rbacTemplate.json"
+    }
+  }
+}
