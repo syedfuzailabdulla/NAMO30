@@ -1,7 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-
   "parameters": {
     "location": {
       "type": "string",
@@ -36,10 +35,7 @@
       "type": "string"
     }
   },
-
   "resources": [
-
-    // NSG
     {
       "type": "Microsoft.Network/networkSecurityGroups",
       "apiVersion": "2021-05-01",
@@ -89,17 +85,19 @@
         ]
       }
     },
-
-    // VNET
     {
       "type": "Microsoft.Network/virtualNetworks",
       "apiVersion": "2021-05-01",
       "name": "[parameters('vnetName')]",
       "location": "[parameters('location')]",
-      "dependsOn": ["nsg1"],
+      "dependsOn": [
+        "nsg1"
+      ],
       "properties": {
         "addressSpace": {
-          "addressPrefixes": ["10.0.0.0/16"]
+          "addressPrefixes": [
+            "10.0.0.0/16"
+          ]
         },
         "subnets": [
           {
@@ -123,13 +121,14 @@
         ]
       }
     },
-
     {
       "type": "Microsoft.Network/publicIPAddresses",
       "apiVersion": "2021-05-01",
       "name": "pip1",
       "location": "[parameters('location')]",
-      "sku": { "name": "Basic" },
+      "sku": {
+        "name": "Basic"
+      },
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
@@ -142,20 +141,25 @@
       "apiVersion": "2021-05-01",
       "name": "pip2",
       "location": "[parameters('location')]",
-      "sku": { "name": "Basic" },
+      "sku": {
+        "name": "Basic"
+      },
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
           "domainNameLabel": "[concat('vm2dns', uniqueString(resourceGroup().id))]"
         }
       }
-}
+    },
     {
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2021-05-01",
       "name": "nic1",
       "location": "[parameters('location')]",
-      "dependsOn": ["pip1", "[parameters('vnetName')]"],
+      "dependsOn": [
+        "pip1",
+        "[parameters('vnetName')]"
+      ],
       "properties": {
         "ipConfigurations": [
           {
@@ -177,7 +181,10 @@
       "apiVersion": "2021-05-01",
       "name": "nic2",
       "location": "[parameters('location')]",
-      "dependsOn": ["pip2", "[parameters('vnetName')]"],
+      "dependsOn": [
+        "pip2",
+        "[parameters('vnetName')]"
+      ],
       "properties": {
         "ipConfigurations": [
           {
@@ -194,14 +201,14 @@
         ]
       }
     },
-
-    // VM1
     {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2021-07-01",
       "name": "[parameters('vm1Name')]",
       "location": "[parameters('location')]",
-      "dependsOn": ["nic1"],
+      "dependsOn": [
+        "nic1"
+      ],
       "properties": {
         "hardwareProfile": {
           "vmSize": "Standard_B1s"
@@ -231,14 +238,14 @@
         }
       }
     },
-
-    // VM2
     {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2021-07-01",
       "name": "[parameters('vm2Name')]",
       "location": "[parameters('location')]",
-      "dependsOn": ["nic2"],
+      "dependsOn": [
+        "nic2"
+      ],
       "properties": {
         "hardwareProfile": {
           "vmSize": "Standard_B1s"
@@ -268,8 +275,6 @@
         }
       }
     },
-
-    // Nested Template Call
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2021-04-01",
@@ -290,31 +295,31 @@
         }
       }
     }
-  ]
+  ],
   "outputs": {
-  "vm1PublicDNS": {
-    "type": "string",
-    "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn]"
-  },
-  "vm2PublicDNS": {
-    "type": "string",
-    "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn]"
-  },
-  "adminUsername": {
-    "type": "string",
-    "value": "[parameters('adminUsername')]"
-  },
-  "adminPasswordOutput": {
-  "type": "string",
-  "value": "[parameters('adminPassword')]"
-  },  
-  "loginCommandVM1": {
-    "type": "string",
-    "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn)]"
-  },
-  "loginCommandVM2": {
-    "type": "string",
-    "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn)]"
+    "vm1PublicDNS": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn]"
+    },
+    "vm2PublicDNS": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn]"
+    },
+    "adminUsername": {
+      "type": "string",
+      "value": "[parameters('adminUsername')]"
+    },
+    "adminPasswordOutput": {
+      "type": "string",
+      "value": "[parameters('adminPassword')]"
+    },
+    "loginCommandVM1": {
+      "type": "string",
+      "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn)]"
+    },
+    "loginCommandVM2": {
+      "type": "string",
+      "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn)]"
+    }
   }
-}
 }
