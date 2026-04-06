@@ -1,0 +1,15 @@
+{
+  "Name": "Custom-VM-Network-Storage-Policy",
+  "Description": "Custom policy for VM, Network and Storage access",
+  "Actions": [
+    "Microsoft.Compute/virtualMachines/start/action",
+    "Microsoft.Compute/virtualMachines/deallocate/action",
+    "Microsoft.Network/virtualNetworks/write",
+    "Microsoft.Network/networkSecurityGroups/write",
+    "Microsoft.Storage/*"
+  ],
+  "NotActions": [],
+  "AssignableScopes": [
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}"
+  ]
+}
