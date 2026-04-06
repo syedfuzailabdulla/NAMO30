@@ -150,7 +150,7 @@
         }
       }
 }
-    // NICs
+    
     {
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2021-05-01",
