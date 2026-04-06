@@ -8,7 +8,7 @@
     "vm1Name": { "value": "vm1" },
     "vm2Name": { "value": "vm2" },
     "adminUsername": { "value": "azureuser" },
-    "adminPassword": { "value": "YourStrongPassword123!" },
+    "adminPassword": { "value": "YourStrongPassword123" },
     "principalId": { "value": "GET-AZUSER-OBJECTID" },
     "nestedTemplateUrl": {
       "value": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/main/nestednamo.json"
