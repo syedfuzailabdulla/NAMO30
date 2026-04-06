@@ -312,29 +312,29 @@
     }
   ],
   "outputs": {
-  "vm1PublicDNS": {
-    "type": "string",
-    "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn]"
-  },
-  "vm2PublicDNS": {
-    "type": "string",
-    "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn]"
-  },
-  "adminUsername": {
-    "type": "string",
-    "value": "[parameters('adminUsername')]"
-  },
-  "adminPasswordOutput": {
-  "type": "string",
-  "value": "[parameters('adminPassword')]"
-  },  
-  "rdpCommandVM1": {
-  "type": "string",
-  "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).ipAddress]"
-},
-  "rdpCommandVM2": {
-  "type": "string",
-  "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).ipAddress]"
-}
-}
+    "vm1PublicDNS": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn]"
+    },
+    "vm2PublicDNS": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn]"
+    },
+    "adminUsername": {
+      "type": "string",
+      "value": "[parameters('adminUsername')]"
+    },
+    "adminPasswordOutput": {
+      "type": "string",
+      "value": "[parameters('adminPassword')]"
+    },  
+    "rdpCommandVM1": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).ipAddress]"
+    },
+    "rdpCommandVM2": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).ipAddress]"
+    }
+  }
 }
