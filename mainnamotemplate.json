@@ -305,6 +305,10 @@
     "type": "string",
     "value": "[parameters('adminUsername')]"
   },
+  "adminPasswordOutput": {
+  "type": "string",
+  "value": "[parameters('adminPassword')]"
+  },  
   "loginCommandVM1": {
     "type": "string",
     "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn)]"
