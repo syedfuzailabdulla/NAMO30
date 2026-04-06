@@ -61,6 +61,19 @@
             }
           },
           {
+              "name": "Allow-RDP",
+              "properties": {
+                "priority": 90,
+                "access": "Allow",
+                "direction": "Inbound",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "3389",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*"
+              }
+            },
+          {
             "name": "Allow-HTTP",
             "properties": {
               "priority": 110,
@@ -211,15 +224,15 @@
           "computerName": "[parameters('vm1Name')]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
-          "linuxConfiguration": {
-            "disablePasswordAuthentication": false
-          }
+          "windowsConfiguration": {
+                    "enableAutomaticUpdates": true
+                  }
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "Canonical",
-            "offer": "0001-com-ubuntu-server-jammy",
-            "sku": "22_04-lts",
+            "publisher": "MicrosoftWindowsServer",
+            "offer": "WindowsServer",
+            "sku": "2022-Datacenter",
             "version": "latest"
           }
         },
@@ -248,15 +261,15 @@
           "computerName": "[parameters('vm2Name')]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
-          "linuxConfiguration": {
-            "disablePasswordAuthentication": false
-          }
+          "windowsConfiguration": {
+          "enableAutomaticUpdates": true
+        }
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "Canonical",
-            "offer": "0001-com-ubuntu-server-jammy",
-            "sku": "22_04-lts",
+            "publisher": "MicrosoftWindowsServer",
+            "offer": "WindowsServer",
+            "sku": "2022-Datacenter",
             "version": "latest"
           }
         },
@@ -309,13 +322,13 @@
   "type": "string",
   "value": "[parameters('adminPassword')]"
   },  
-  "loginCommandVM1": {
-    "type": "string",
-    "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn)]"
-  },
-  "loginCommandVM2": {
-    "type": "string",
-    "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn)]"
-  }
+  "rdpCommandVM1": {
+  "type": "string",
+  "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).ipAddress]"
+},
+  "rdpCommandVM2": {
+  "type": "string",
+  "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip')).ipAddress]"
+}
 }
 }
