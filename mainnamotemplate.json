@@ -328,7 +328,7 @@
 },
   "rdpCommandVM2": {
   "type": "string",
-  "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip')).ipAddress]"
+  "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).ipAddress]"
 }
 }
 }
