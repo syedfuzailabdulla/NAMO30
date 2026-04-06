@@ -284,4 +284,26 @@
       }
     }
   ]
+  "outputs": {
+  "vm1PublicDNS": {
+    "type": "string",
+    "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn]"
+  },
+  "vm2PublicDNS": {
+    "type": "string",
+    "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn]"
+  },
+  "adminUsername": {
+    "type": "string",
+    "value": "[parameters('adminUsername')]"
+  },
+  "loginCommandVM1": {
+    "type": "string",
+    "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).dnsSettings.fqdn)]"
+  },
+  "loginCommandVM2": {
+    "type": "string",
+    "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn)]"
+  }
+}
 }
