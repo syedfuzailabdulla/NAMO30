@@ -39,7 +39,7 @@
 
   "resources": [
 
-    // NSG
+    
     {
       "type": "Microsoft.Network/networkSecurityGroups",
       "apiVersion": "2021-05-01",
@@ -103,7 +103,7 @@
       }
     },
 
-    // VNET
+    
     {
       "type": "Microsoft.Network/virtualNetworks",
       "apiVersion": "2021-05-01",
@@ -162,15 +162,18 @@
           "domainNameLabel": "[concat('vm2dns', uniqueString(resourceGroup().id))]"
         }
       }
-},
+    },
     
     {
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2021-05-01",
       "name": "nic1",
       "location": "[parameters('location')]",
-      "dependsOn": ["pip1", "[parameters('vnetName')]"],
+      "dependsOn": ["pip1", "[parameters('vnetName')]", "nsg1"],
       "properties": {
+        "networkSecurityGroup": {
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups','nsg1')]"
+        },
         "ipConfigurations": [
           {
             "name": "ipconfig1",
@@ -191,8 +194,11 @@
       "apiVersion": "2021-05-01",
       "name": "nic2",
       "location": "[parameters('location')]",
-      "dependsOn": ["pip2", "[parameters('vnetName')]"],
+      "dependsOn": ["pip2", "[parameters('vnetName')]", "nsg1"],
       "properties": {
+        "networkSecurityGroup": {
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups','nsg1')]"
+        },
         "ipConfigurations": [
           {
             "name": "ipconfig2",
@@ -209,7 +215,7 @@
       }
     },
 
-    // VM1
+    
     {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2021-07-01",
@@ -246,7 +252,7 @@
       }
     },
 
-    // VM2
+    
     {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2021-07-01",
@@ -283,7 +289,7 @@
       }
     },
 
-    // Nested Template Call
+    
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2021-04-01",
