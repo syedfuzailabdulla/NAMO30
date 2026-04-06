@@ -7,7 +7,7 @@
     "subnet2Prefix": { "value": "10.0.2.0/24" },
     "vm1Name": { "value": "vm1" },
     "vm2Name": { "value": "vm2" },
-    "adminUsername": { "value": "azureuser" },
+    "adminUsername": { "value": "fuzail" },
     "adminPassword": { "value": "YourStrongPassword123" },
     "principalId": { "value": "GET-AZUSER-OBJECTID" },
     "nestedTemplateUrl": {
