@@ -149,7 +149,7 @@
           "domainNameLabel": "[concat('vm2dns', uniqueString(resourceGroup().id))]"
         }
       }
-}
+},
     
     {
       "type": "Microsoft.Network/networkInterfaces",
@@ -291,7 +291,7 @@
         }
       }
     }
-  ]
+  ],
   "outputs": {
   "vm1PublicDNS": {
     "type": "string",
