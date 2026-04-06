@@ -39,7 +39,6 @@
 
   "resources": [
 
-    
     {
       "type": "Microsoft.Network/networkSecurityGroups",
       "apiVersion": "2021-05-01",
@@ -61,18 +60,18 @@
             }
           },
           {
-              "name": "Allow-RDP",
-              "properties": {
-                "priority": 100,
-                "access": "Allow",
-                "direction": "Inbound",
-                "protocol": "Tcp",
-                "sourcePortRange": "*",
-                "destinationPortRange": "3389",
-                "sourceAddressPrefix": "*",
-                "destinationAddressPrefix": "*"
-              }
-            },
+            "name": "Allow-RDP",
+            "properties": {
+              "priority": 100,
+              "access": "Allow",
+              "direction": "Inbound",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*"
+            }
+          },
           {
             "name": "Allow-HTTP",
             "properties": {
@@ -103,7 +102,6 @@
       }
     },
 
-    
     {
       "type": "Microsoft.Network/virtualNetworks",
       "apiVersion": "2021-05-01",
@@ -163,7 +161,7 @@
         }
       }
     },
-    
+
     {
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2021-05-01",
@@ -215,7 +213,6 @@
       }
     },
 
-    
     {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2021-07-01",
@@ -231,8 +228,8 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
-                    "enableAutomaticUpdates": true
-                  }
+            "enableAutomaticUpdates": true
+          }
         },
         "storageProfile": {
           "imageReference": {
@@ -240,6 +237,12 @@
             "offer": "WindowsServer",
             "sku": "2022-Datacenter",
             "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "FromImage",
+            "managedDisk": {
+              "storageAccountType": "Standard_LRS"
+            }
           }
         },
         "networkProfile": {
@@ -252,7 +255,6 @@
       }
     },
 
-    
     {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2021-07-01",
@@ -268,8 +270,8 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
-          "enableAutomaticUpdates": true
-        }
+            "enableAutomaticUpdates": true
+          }
         },
         "storageProfile": {
           "imageReference": {
@@ -277,6 +279,12 @@
             "offer": "WindowsServer",
             "sku": "2022-Datacenter",
             "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "FromImage",
+            "managedDisk": {
+              "storageAccountType": "Standard_LRS"
+            }
           }
         },
         "networkProfile": {
@@ -289,7 +297,6 @@
       }
     },
 
-    
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2021-04-01",
@@ -311,6 +318,7 @@
       }
     }
   ],
+
   "outputs": {
     "vm1PublicDNS": {
       "type": "string",
@@ -327,7 +335,7 @@
     "adminPasswordOutput": {
       "type": "string",
       "value": "[parameters('adminPassword')]"
-    },  
+    },
     "rdpCommandVM1": {
       "type": "string",
       "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).ipAddress]"
