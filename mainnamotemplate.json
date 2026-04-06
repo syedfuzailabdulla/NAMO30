@@ -124,14 +124,18 @@
       }
     },
 
-    // PUBLIC IPs
     {
       "type": "Microsoft.Network/publicIPAddresses",
       "apiVersion": "2021-05-01",
       "name": "pip1",
       "location": "[parameters('location')]",
       "sku": { "name": "Basic" },
-      "properties": { "publicIPAllocationMethod": "Dynamic" }
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic",
+        "dnsSettings": {
+          "domainNameLabel": "[concat('vm1dns', uniqueString(resourceGroup().id))]"
+        }
+      }
     },
     {
       "type": "Microsoft.Network/publicIPAddresses",
@@ -139,9 +143,13 @@
       "name": "pip2",
       "location": "[parameters('location')]",
       "sku": { "name": "Basic" },
-      "properties": { "publicIPAllocationMethod": "Dynamic" }
-    },
-
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic",
+        "dnsSettings": {
+          "domainNameLabel": "[concat('vm2dns', uniqueString(resourceGroup().id))]"
+        }
+      }
+}
     // NICs
     {
       "type": "Microsoft.Network/networkInterfaces",
