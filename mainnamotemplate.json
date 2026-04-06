@@ -50,7 +50,7 @@
           {
             "name": "Allow-SSH",
             "properties": {
-              "priority": 100,
+              "priority": 101,
               "access": "Allow",
               "direction": "Inbound",
               "protocol": "Tcp",
@@ -63,7 +63,7 @@
           {
               "name": "Allow-RDP",
               "properties": {
-                "priority": 90,
+                "priority": 100,
                 "access": "Allow",
                 "direction": "Inbound",
                 "protocol": "Tcp",
