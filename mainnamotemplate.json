@@ -335,14 +335,6 @@
     "adminPasswordOutput": {
       "type": "string",
       "value": "[parameters('adminPassword')]"
-    },
-    "rdpCommandVM1": {
-      "type": "string",
-      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip1')).ipAddress]"
-    },
-    "rdpCommandVM2": {
-      "type": "string",
-      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).ipAddress]"
     }
   }
 }
