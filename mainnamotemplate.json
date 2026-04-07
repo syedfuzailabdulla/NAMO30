@@ -228,7 +228,7 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
-            "enableAutomaticUpdates": true
+            "enableAutomaticUpdates": false 
           }
         },
         "storageProfile": {
@@ -263,7 +263,7 @@
       "dependsOn": ["nic2"],
       "properties": {
         "hardwareProfile": {
-          "vmSize": "Standard_B1s"
+          "vmSize": "Standard_B2s"
         },
         "osProfile": {
           "computerName": "[parameters('vm2Name')]",
