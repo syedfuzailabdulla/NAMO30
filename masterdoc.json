@@ -1,0 +1,30 @@
+{
+  "Name": "Deploy Azure Infrastructure with ARM Templates and RBAC",
+  "Language": "English",
+  "Files": [
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task1-OpenCloudShell.md",
+      "Order": 1
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task2-DeployTemplate.md",
+      "Order": 2
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task3-VerifyVMsAndSubnets.md",
+      "Order": 3
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task4-CheckRBACAssignment.md",
+      "Order": 4
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task5-ReviewRolePermissions.md",
+      "Order": 5
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task6-StartStopVM.md",
+      "Order": 6
+    }
+  ]
+}
