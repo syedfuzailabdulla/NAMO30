@@ -332,7 +332,7 @@
       "type": "string",
       "value": "[parameters('adminUsername')]"
     },
-    "adminPasswordOutput": {
+    "adminPassword": {
       "type": "string",
       "value": "[parameters('adminPassword')]"
     }
