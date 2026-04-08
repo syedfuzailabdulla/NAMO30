@@ -29,6 +29,7 @@
               "Microsoft.Compute/virtualMachines/read",
               "Microsoft.Network/virtualNetworks/write",
               "Microsoft.Network/networkSecurityGroups/write",
+              "Microsoft.Network/virtualNetworks/write",
               "Microsoft.Storage/*"
             ],
             "notActions": []
