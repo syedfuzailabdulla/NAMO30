@@ -1,4 +1,5 @@
-{
+[
+  {
   "Name": "Deploy Azure Infrastructure with ARM Templates and RBAC",
   "Language": "English",
   "Files": [
@@ -28,3 +29,4 @@
     }
   ]
 }
+]
