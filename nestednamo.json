@@ -14,7 +14,7 @@
       "apiVersion": "2022-04-01",
       "name": "[guid(resourceGroup().id, 'customRole')]",
       "properties": {
-        "roleName": "Custom-VM-Network-Storage-Role",
+        "roleName": "Custom-VM-Network-Storage",
         "description": "Limited custom role",
         "assignableScopes": [
           "[resourceGroup().id]"
