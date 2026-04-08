@@ -1,15 +1,14 @@
 {
-  "Name": "Custom-VM-Network|Storage|Policy",
-  "Description": "Custom policy for VM, Network and Storage access",
+  "Name": "Custom-VM-Network-Restricted-Role",
+  "Description": "Allows start/stop VM and limited network configuration for lab user",
   "Actions": [
     "Microsoft.Compute/virtualMachines/start/action",
     "Microsoft.Compute/virtualMachines/deallocate/action",
-    "Microsoft.Network/virtualNetworks/write",
-    "Microsoft.Network/networkSecurityGroups/write",
-    "Microsoft.Storage/*"
+    "Microsoft.Network/virtualNetworks/subnets/write",
+    "Microsoft.Network/networkSecurityGroups/write"
   ],
   "NotActions": [],
   "AssignableScopes": [
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}"
+    "/subscriptions/[GET-SUBSCRIPTION]/resourceGroups/[GET-RG-customsuffix-NAME]"
   ]
 }
