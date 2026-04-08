@@ -1,5 +1,5 @@
 {
-  "Name": "Custom-VM-Network-Restricted-Role",
+  "Name": "demo-role",
   "Description": "Allows start/stop VM and limited network configuration for lab user",
   "Actions": [
     "Microsoft.Compute/virtualMachines/start/action",
@@ -7,8 +7,5 @@
     "Microsoft.Network/virtualNetworks/subnets/write",
     "Microsoft.Network/networkSecurityGroups/write"
   ],
-  "NotActions": [],
-  "AssignableScopes": [
-    "/subscriptions/[GET-SUBSCRIPTION]/resourceGroups/[GET-RG-customsuffix-NAME]"
-  ]
+  "NotActions": []
 }
