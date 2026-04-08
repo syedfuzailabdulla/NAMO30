@@ -3,27 +3,27 @@
   "Language": "English",
   "Files": [
     {
-      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task1-OpenCloudShell.md",
+      "RawFilePath": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/refs/heads/main/Task1-OpenCloudShell.md",
       "Order": 1
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task2-DeployTemplate.md",
+      "RawFilePath": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/refs/heads/main/Task2-DeployTemplate.md",
       "Order": 2
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task3-VerifyVMsAndSubnets.md",
+      "RawFilePath": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/refs/heads/main/Task3-VerifyVMsAndSubnets.md",
       "Order": 3
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task4-CheckRBACAssignment.md",
+      "RawFilePath": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/refs/heads/main/Task4-CheckRBACAssignment.md",
       "Order": 4
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task5-ReviewRolePermissions.md",
+      "RawFilePath": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/refs/heads/main/Task5-ReviewRolePermissions.md",
       "Order": 5
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/your-org/arm-lab/main/Instructions/Task6-StartStopVM.md",
+      "RawFilePath": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/refs/heads/main/Task6-StartStopVM.md",
       "Order": 6
     }
   ]
