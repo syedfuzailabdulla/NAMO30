@@ -22,6 +22,8 @@
         "permissions": [
           {
             "actions": [
+              "Microsoft.Resources/subscriptions/resourceGroups/read",
+              "Microsoft.Resources/resources/read",
               "Microsoft.Compute/virtualMachines/start/action",
               "Microsoft.Compute/virtualMachines/deallocate/action",
               "Microsoft.Compute/virtualMachines/read",
