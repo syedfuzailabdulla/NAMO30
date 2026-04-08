@@ -1,5 +1,5 @@
 {
-  "Name": "demo-role",
+  "Name": "demo-role1",
   "Description": "Allows start/stop VM and limited network configuration for lab user",
   "Actions": [
     "Microsoft.Compute/virtualMachines/start/action",
