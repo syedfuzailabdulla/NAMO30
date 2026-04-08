@@ -1,5 +1,5 @@
 {
-  "Name": "Custom-VM-Network-Storage-Policy",
+  "Name": "Custom-VM-Network|Storage|Policy",
   "Description": "Custom policy for VM, Network and Storage access",
   "Actions": [
     "Microsoft.Compute/virtualMachines/start/action",
