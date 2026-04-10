@@ -10,10 +10,6 @@
     "principalId": { "value": "GET-AZUSER-OBJECTID" },
     "nestedTemplateUrl": {
       "value": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/main/nestednamo.json"
-    },
-
-    "allowRDPFromIP": {
-      "value": "*"
     }
   }
 }
