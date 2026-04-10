@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+
+  "parameters": {
+    "subnet1Prefix": { "value": "10.0.1.0/24" },
+    "subnet2Prefix": { "value": "10.0.2.0/24" },
+    "adminUsername": { "value": "fuzail" },
+    "adminPassword": { "value": "Abdullah4321" },
+    "principalId": { "value": "GET-AZUSER-OBJECTID" },
+    "nestedTemplateUrl": {
+      "value": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/main/nestednamo.json"
+    },
+
+    "allowRDPFromIP": {
+      "value": "*"
+    }
+  }
+}
