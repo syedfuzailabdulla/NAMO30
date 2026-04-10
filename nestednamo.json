@@ -14,7 +14,7 @@
       "apiVersion": "2022-04-01",
       "name": "[guid(resourceGroup().id, 'customRole')]",
       "properties": {
-        "roleName": "demo-role1",
+        "roleName": "demo-role12",
         "description": "Limited custom role",
         "assignableScopes": [
           "[resourceGroup().id]"
