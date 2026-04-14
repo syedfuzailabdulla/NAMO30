@@ -329,6 +329,10 @@
     "adminPassword": {
       "type": "string",
       "value": "[parameters('adminPassword')]"
+    },
+    "resourceGroupId": {
+    "type": "string",
+    "value": "[resourceGroup().id]"
     }
   }
 }
