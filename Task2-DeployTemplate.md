@@ -12,7 +12,7 @@ In this task, you will run a single PowerShell command in Cloud Shell to deploy 
    ```powershell
    New-AzResourceGroupDeployment `
      -Name "LabDeployment" `
-     -ResourceGroupName "<inject key="GET-RG-customsuffix-NAME" enableCopy="true"></inject>" `
+     -ResourceGroupName "<inject key="resourceGroupId" enableCopy="true"></inject>" `
      -TemplateUri "https://github.com/syedfuzailabdulla/NAMO30/edit/main/mainnamotemplate.json" `
      -TemplateParameterUri "https://github.com/syedfuzailabdulla/NAMO30/edit/main/parameternamo.json"
    ```
