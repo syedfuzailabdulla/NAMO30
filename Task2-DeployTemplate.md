@@ -12,9 +12,9 @@ In this task, you will run a single PowerShell command in Cloud Shell to deploy 
    ```powershell
    New-AzResourceGroupDeployment `
      -Name "LabDeployment" `
-     -ResourceGroupName "<inject key="resourceGroupName" enableCopy="true"></inject>" `
-     -TemplateUri "https://raw.githubusercontent.com/your-org/arm-lab/main/azuredeploy.json" `
-     -TemplateParameterUri "https://raw.githubusercontent.com/your-org/arm-lab/main/azuredeploy.parameters.json"
+     -ResourceGroupName "<inject key="GET-RG-customsuffix-NAME" enableCopy="true"></inject>" `
+     -TemplateUri "https://github.com/syedfuzailabdulla/NAMO30/edit/main/mainnamotemplate.json" `
+     -TemplateParameterUri "https://github.com/syedfuzailabdulla/NAMO30/edit/main/parameternamo.json"
    ```
 
    > **Note:** This will take approximately **10–15 minutes**. Wait until you see `ProvisioningState : Succeeded` before moving on.
