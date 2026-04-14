@@ -6,7 +6,7 @@
     "subnet1Prefix": { "value": "10.0.1.0/24" },
     "subnet2Prefix": { "value": "10.0.2.0/24" },
     "adminUsername": { "value": "fuzail" },
-    "adminPassword": { "value": "Abdullah4321" },
+    "adminPassword": { "value": "GEN-PASSWORD" },
     "principalId": { "value": "GET-AZUSER-OBJECTID" },
     "nestedTemplateUrl": {
       "value": "https://raw.githubusercontent.com/syedfuzailabdulla/NAMO30/main/nestednamo.json"
