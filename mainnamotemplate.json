@@ -322,11 +322,11 @@
       "type": "string",
       "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses','pip2')).dnsSettings.fqdn]"
     },
-    "adminUsername": {
+    "VMUsername": {
       "type": "string",
       "value": "[parameters('adminUsername')]"
     },
-    "adminPassword": {
+    "VMPassword": {
       "type": "string",
       "value": "[parameters('adminPassword')]"
     },
